@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Paste an API request. Get a clean action page." />
+  <title>Runlink — Paste. Publish. Run.</title>
+  <style>
+    :root{--bg:#fbfaf7;--card:#fff;--ink:#121212;--muted:#6f6d67;--line:#dedbd2;--blue:#3157f7;--soft:#eef2ff;--green:#087443;--orange:#ff5a1f;--shadow:0 24px 70px rgba(20,18,12,.08)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1040px,calc(100% - 28px));margin:auto}.top{height:68px;display:flex;align-items:center;border-bottom:1px solid var(--line)}.topin{display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:900;letter-spacing:-.04em}.mark{width:35px;height:35px;border-radius:11px;background:#111;color:#fff;display:grid;place-items:center;position:relative;overflow:hidden}.mark:after{content:"";position:absolute;width:13px;height:13px;background:var(--orange);border-radius:50%;right:-4px;top:-4px}.signin{font-size:14px;color:var(--muted);font-weight:700}.hero{text-align:center;padding:86px 0 34px}.hero h1{font-size:clamp(46px,7vw,78px);line-height:.98;letter-spacing:-.065em;margin:0 auto 18px;max-width:860px}.hero p{font-size:18px;color:var(--muted);line-height:1.55;margin:auto;max-width:660px}.maker{margin:34px auto 0;max-width:850px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:10px;box-shadow:var(--shadow);text-align:left}.paste{width:100%;min-height:130px;border:0;resize:vertical;outline:none;padding:17px 18px;background:transparent;color:var(--ink);font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}.makerBottom{border-top:1px solid var(--line);padding:10px 10px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}.hint{font-size:12px;color:var(--muted)}.primary,.secondary{border-radius:12px;min-height:44px;padding:0 17px;font-weight:850;border:1px solid transparent}.primary{background:#111;color:#fff}.secondary{background:#fff;border-color:var(--line);color:var(--ink)}.examples{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:16px}.chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 11px;font-size:12px;color:var(--muted)}.chip:hover{background:#fff;color:var(--ink)}.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;margin:32px 0 80px;color:var(--muted);font-size:13px}.flow{display:none;padding:28px 0 80px}.flow.on{display:block}.stepbar{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px}.dot{width:8px;height:8px;border-radius:50%;background:#d3d0c8}.dot.on{background:#111}.workspace{display:grid;grid-template-columns:.95fr 1.05fr;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:10px;font-weight:900;color:var(--muted)}.detected{margin-top:16px;display:grid;gap:9px}.item{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:13px;padding:12px}.item span{font-size:12px;color:var(--muted)}.item b{font-size:13px;max-width:65%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.edit{display:grid;gap:12px;margin-top:18px}.field{display:grid;gap:7px}.field label{font-size:12px;font-weight:850}.input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 13px;outline:none;background:#fff}.input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(49,87,247,.1)}.actions{display:flex;gap:9px;margin-top:18px}.actions>*{flex:1}.previewWrap{background:#f2f0ea}.preview{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 15px 40px rgba(20,18,12,.07)}.company{display:flex;align-items:center;justify-content:space-between;gap:12px}.avatar{width:38px;height:38px;border-radius:12px;background:#111;color:#fff;display:grid;place-items:center;font-weight:900}.secure{background:#e9f7ef;color:var(--green);font-size:11px;font-weight:850;border-radius:999px;padding:6px 8px}.preview h2{font-size:28px;letter-spacing:-.05em;margin:30px 0 8px}.preview p{color:var(--muted);line-height:1.55}.preview .field{margin-top:14px}.result{display:none;margin-top:16px;border-radius:14px;background:#e9f7ef;color:var(--green);padding:14px}.result.on{display:block}.published{display:none;max-width:760px;margin:auto;text-align:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow)}.published.on{display:block}.check{width:58px;height:58px;border-radius:18px;background:#e9f7ef;color:var(--green);display:grid;place-items:center;font-size:26px;margin:auto}.published h2{font-size:34px;letter-spacing:-.05em;margin:18px 0 8px}.linkbox{display:flex;align-items:center;gap:8px;background:#f4f2ed;border:1px solid var(--line);border-radius:14px;padding:8px;margin-top:22px}.linkbox input{flex:1;min-width:0;border:0;background:transparent;padding:8px;font:13px ui-monospace,SFMono-Regular,Menlo,monospace;outline:none}.tiny{font-size:12px;color:var(--muted);margin-top:13px}.how{padding:30px 0 80px}.how h2{text-align:center;font-size:38px;letter-spacing:-.05em}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.step{padding:20px;border-top:1px solid var(--line)}.num{font-size:12px;color:var(--muted);font-weight:900}.step h3{font-size:18px;margin:18px 0 7px}.step p{color:var(--muted);line-height:1.55;margin:0}.toast{position:fixed;right:18px;bottom:18px;background:#111;color:#fff;border-radius:12px;padding:12px 14px;opacity:0;transform:translateY(8px);transition:.2s;pointer-events:none}.toast.on{opacity:1;transform:none}@media(max-width:800px){.workspace{grid-template-columns:1fr}.hero{padding-top:60px}.steps{grid-template-columns:1fr}.makerBottom{align-items:stretch;flex-direction:column}.primary{width:100%}}@media(max-width:520px){.wrap{width:min(100% - 20px,1040px)}.hero h1{font-size:48px}.hero p{font-size:16px}.hero{padding-top:48px}.maker{border-radius:18px}.paste{min-height:150px}.actions{flex-direction:column}.linkbox{flex-direction:column}.linkbox .secondary{width:100%}.published{padding:24px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap topin"><a class="logo" href="#"><span class="mark">R</span>Runlink</a><a class="signin" href="#">Sign in</a></div></header>
+  <main id="start">
+    <section class="hero wrap">
+      <h1>Paste an API request.<br>Your action page is live.</h1>
+      <p>Turn any webhook or cURL command into a clean button or form people can use.</p>
+      <div class="maker">
+        <textarea id="paste" class="paste" aria-label="Webhook URL or cURL command" placeholder="Paste a webhook URL or cURL command…">curl -X POST https://dummyjson.com/products/add \
+-H "Content-Type: application/json" \
+-d '{"title":"Lagos Field Notebook","price":24.90,"stock":120}'</textarea>
+        <div class="makerBottom"><span class="hint">Runlink detects the method, fields and response automatically.</span><button id="make" class="primary">Create action page →</button></div>
+      </div>
+      <div class="examples"><button class="chip" data-example="url">Try a webhook URL</button><button class="chip" data-example="curl">Try a cURL command</button><button class="chip" data-example="json">Try JSON API</button></div>
+      <div class="trust"><span>No account to try</span><span>Endpoint stays hidden</span><span>Recipient needs no login</span></div>
+    </section>
+  </main>
+
+  <section id="flow" class="flow wrap">
+    <div class="stepbar"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
+    <div class="workspace">
+      <section class="panel">
+        <span class="eyebrow">Detected automatically</span>
+        <div class="detected">
+          <div class="item"><span>Method</span><b id="method">POST</b></div>
+          <div class="item"><span>Endpoint</span><b id="endpoint">dummyjson.com/products/add</b></div>
+          <div class="item"><span>Interface</span><b id="interface">Form · 3 fields</b></div>
+        </div>
+        <div class="edit">
+          <div class="field"><label for="pageTitle">Page title</label><input id="pageTitle" class="input" value="Add inventory item" /></div>
+          <div class="field"><label for="buttonLabel">Button label</label><input id="buttonLabel" class="input" value="Create item" /></div>
+          <div class="field"><label for="slug">Short link</label><input id="slug" class="input" value="add-item" /></div>
+        </div>
+        <div class="actions"><button id="back" class="secondary">Back</button><button id="publish" class="primary">Publish now →</button></div>
+      </section>
+      <aside class="panel previewWrap">
+        <span class="eyebrow">Instant preview</span>
+        <div class="preview" style="margin-top:14px">
+          <div class="company"><div style="display:flex;align-items:center;gap:10px"><span class="avatar">A</span><div><b>Acme Ops</b><div style="font-size:11px;color:var(--muted)">Powered by Runlink</div></div></div><span class="secure">Secure</span></div>
+          <h2 id="previewTitle">Add inventory item</h2>
+          <p>Complete the fields below to run this action.</p>
+          <div id="dynamicFields"></div>
+          <button id="previewRun" class="primary" style="width:100%;margin-top:17px">Create item</button>
+          <div id="previewResult" class="result"></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="published" class="flow wrap">
+    <div class="published on">
+      <div class="check">✓</div>
+      <h2>Your action page is live.</h2>
+      <p style="color:var(--muted)">Copy the link and send it. No recipient account required.</p>
+      <div class="linkbox"><input id="liveLink" readonly value="https://runlink-live-demo.vercel.app/#p/add-item" /><button id="copy" class="secondary">Copy link</button><button id="open" class="primary">Open page</button></div>
+      <div class="tiny">The original endpoint and headers are not shown to recipients.</div>
+    </div>
+  </section>
+
+  <section class="how wrap"><h2>That is the whole workflow.</h2><div class="steps"><article class="step"><span class="num">01</span><h3>Paste</h3><p>A URL, cURL command, or request copied from your automation tool.</p></article><article class="step"><span class="num">02</span><h3>Check</h3><p>Runlink detects the request and builds the usable interface automatically.</p></article><article class="step"><span class="num">03</span><h3>Share</h3><p>Send one clean link. The recipient clicks, submits and gets the result.</p></article></div></section>
+  <div id="toast" class="toast">Copied</div>
+
+  <script>
+    const $=s=>document.querySelector(s);const paste=$('#paste'),start=$('#start'),flow=$('#flow'),published=$('#published');let parsed={method:'POST',endpoint:'https://dummyjson.com/products/add',fields:{title:'Lagos Field Notebook',price:24.9,stock:120}};
+    function parseRequest(raw){const method=(raw.match(/(?:-X|--request)\s+(GET|POST|PUT|PATCH|DELETE)/i)||[])[1]||(/^https?:/i.test(raw.trim())?'POST':'POST');const endpoint=(raw.match(/https?:\/\/[^\s'"\\]+/)||[])[0]||raw.trim();let fields={};const body=(raw.match(/(?:-d|--data|--data-raw)\s+['"](\{[\s\S]*?\})['"]/)||[])[1];if(body){try{fields=JSON.parse(body)}catch{}}if(!Object.keys(fields).length)fields={message:'Run this action'};return{method:method.toUpperCase(),endpoint,fields}}
+    function label(k){return k.replace(/[_-]/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}
+    function renderFields(){const wrap=$('#dynamicFields');wrap.innerHTML='';Object.entries(parsed.fields).slice(0,5).forEach(([k,v])=>{const d=document.createElement('div');d.className='field';d.innerHTML=`<label>${label(k)}</label><input class="input dyn" data-key="${k}" value="${String(v).replace(/"/g,'&quot;')}" />`;wrap.appendChild(d)})}
+    function showFlow(){parsed=parseRequest(paste.value);$('#method').textContent=parsed.method;try{$('#endpoint').textContent=new URL(parsed.endpoint).host+new URL(parsed.endpoint).pathname}catch{$('#endpoint').textContent=parsed.endpoint}$('#interface').textContent=`Form · ${Object.keys(parsed.fields).length} field${Object.keys(parsed.fields).length===1?'':'s'}`;renderFields();start.style.display='none';published.style.display='none';flow.classList.add('on');scrollTo({top:0,behavior:'smooth'})}
+    $('#make').onclick=showFlow;paste.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter')showFlow()});
+    document.querySelectorAll('[data-example]').forEach(b=>b.onclick=()=>{const x=b.dataset.example;if(x==='url')paste.value='https://hooks.example.com/generate-report';if(x==='curl')paste.value='curl -X POST https://dummyjson.com/products/add \\\n-H "Content-Type: application/json" \\\n-d \'{"title":"Lagos Field Notebook","price":24.90,"stock":120}\'';if(x==='json')paste.value='curl -X POST https://jsonplaceholder.typicode.com/posts \\\n-H "Content-Type: application/json" \\\n-d \'{"title":"Publish weekly update","body":"Approved by operations","userId":7}\''});
+    $('#pageTitle').oninput=e=>$('#previewTitle').textContent=e.target.value;$('#buttonLabel').oninput=e=>$('#previewRun').textContent=e.target.value;$('#back').onclick=()=>{flow.classList.remove('on');start.style.display='block';scrollTo({top:0,behavior:'smooth'})};
+    $('#previewRun').onclick=async()=>{const btn=$('#previewRun'),out=$('#previewResult');btn.disabled=true;btn.textContent='Running…';const body={};document.querySelectorAll('.dyn').forEach(i=>body[i.dataset.key]=isNaN(i.value)||i.value.trim()===''?i.value:Number(i.value));try{const r=await fetch(parsed.endpoint,{method:parsed.method,headers:{'Content-Type':'application/json'},body:parsed.method==='GET'?undefined:JSON.stringify(body)});const data=await r.json();out.classList.add('on');out.innerHTML=`<b>Done · ${r.status}</b><div style="margin-top:5px;font-size:12px">Returned ID: ${data.id??'—'}</div>`}catch{out.classList.add('on');out.innerHTML='<b>Demo action ready</b><div style="margin-top:5px;font-size:12px">The endpoint will run through Runlink in production.</div>'}finally{btn.disabled=false;btn.textContent=$('#buttonLabel').value}};
+    $('#publish').onclick=()=>{const slug=$('#slug').value.trim().replace(/[^a-z0-9-]/gi,'-').toLowerCase()||'action';$('#liveLink').value=location.origin+location.pathname+'#p/'+slug;flow.classList.remove('on');published.style.display='block';scrollTo({top:0,behavior:'smooth'})};
+    $('#copy').onclick=()=>{const t=$('#toast');navigator.clipboard?.writeText($('#liveLink').value);t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1500)};$('#open').onclick=()=>{flow.classList.add('on');published.style.display='none';scrollTo({top:0,behavior:'smooth'})};
+  </script>
+</body>
+</html>
